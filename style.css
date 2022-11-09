@@ -21,15 +21,20 @@ body {
 }
 
 #cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* display: flex;
+    flex-wrap: wrap; */
+    gap: .5rem;
     max-width: 70rem;
     width: calc(100% - 4rem);
 }
+    #cards:hover > .card > .card-border {
+        opacity: 1;
+    }
 
 .card {
-    width: 15rem;
+    /* width: 15rem; */
     height: 20rem;
     background-color: rgba(255, 255, 255, .1);
     border: 1px solid rgba(255, 255, 255, .1);
@@ -58,7 +63,7 @@ body {
     .card::before {
         background: radial-gradient(
             500px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 255, 255, .06),
+            rgba(255, 255, 255, .1),
             transparent 40%
         );
         z-index: 3;
@@ -71,8 +76,11 @@ body {
         );
         z-index: 1;
     }
-    .card:hover::before,
+    /* .card:hover::before,
     .card:hover > .card-border {
+        opacity: 1;
+    } */
+    .card:hover::before {
         opacity: 1;
     }
 
